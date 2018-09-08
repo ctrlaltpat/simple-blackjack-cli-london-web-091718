@@ -29,12 +29,17 @@ def initial_round
 end
 
 def hit?(card_total)
+  total = card_total
   prompt_user
   user_input = get_user_input.chomp
   case user_input
     when "s"
-    
-      
+      total
+    when "h"
+      total += deal_card
+      total
+    else
+      invalid_command
 end
 
 def invalid_command
